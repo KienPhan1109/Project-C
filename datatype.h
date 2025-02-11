@@ -7,4 +7,10 @@ typedef struct {
     char CategoryName[10];
 } Category;
 
+typedef struct 
+{
+    char Account[30];
+    char Password[30];
+} Admin;
+
 #endif
