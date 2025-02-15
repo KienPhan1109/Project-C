@@ -3,76 +3,71 @@
 
 #include "datatype.h"
 
-// Ham xoa bo nho dem
-void clearCache();
 
-// Ham nhap lua chon
-int choice();
+void writeFileAdmin(const Admin admin[], int countAdmin);
 
-// Ten he thong
-void nameSystem();
-
-// Ham doc FIle categories.bin
-void readFile(Category categories[], int *count);
-
-// Ham ghi File categories.bin
-void writeFile(const Category categories[], int count);
-
-// Ham doc File admin.bin
 void readFileAdmin(Admin admin[], int *countAdmin);
 
-// Ham ghi File admin.bin
-void writeFileAdmin(const Admin admin[], int countAmin);
+void LoginAdmin(Admin admin[], int countAdmin);
 
-// Ham hien thi toan bo danh muc
-void displayCategories(const Category categories[], int count);
+void mainMenu();
 
-// Ham them danh muc
-void addCategory(Category categories[], int *count);
+int choice();
 
-// Ham sua danh muc
-void editCategory(Category categories[], int count);
+void clearCache();
 
-// Ham xoa danh muc
-void deleteCategory(Category categories[], int *count);
+void goBack();
 
-// Ham tim kiem danh muc theo ten
-void searchCategory(const Category categories[], int count);
+int isDuplicateIDCategory(Category categories[], int countCategory, char id[]);
 
-// Ham sap xep danh muc theo ten tang dan
-void sortCategoriesUp(Category categories[], int count);
+int isDuplicateNameCategory(Category categories[], int countCategory, char name[]);
 
-// Ham sap xep danh muc theo ten giam dan
-void sortCategoriesDown(Category categories[], int count);
+int isDuplicateIDProductInCategory(Product products[], int countProduct, char *productID, char *categoryID);
 
-// Ten ham them danh muc
-void nameAddCategory();
+int isDuplicateNameProductInCategory(Product products[], int countProduct, char *productName, char *categoryID);
 
-// Ham ten sua danh muc
-void nameEditCategory();
+void writeFileCategory(const Category categories[], int countCategory);
 
-// Ham ten xoa danh muc
-void nameDeleteCategory();
+void writeFileProduct(const Product products[], int countProduct);
 
-// Ham ten hien thi danh muc
-void nameShowCategory();
+void readFileCategory(Category categories[], int *countCategory);
 
-// Ham kiem tra trung lap ID
-int isDuplicateID(Category categories[], int count, char id[]);
+void readFileProduct(Product products[], int *countProduct);
 
-// Ham kiem tra trung lap Name
-int isDuplicateName(Category categories[], int count, char name[]);
+void displayCategories(const Category categories[], int countCategory);
 
-// Ham quay lai menu
-void goBack(Category categories[], int *count);
+void displayProducts(const Product products[], int countProduct);
 
-// Ham lua chon cach sap xep
+void addCategory(Category categories[], int *countCategory);
+
+void addProduct(Product products[], int *countProduct, Category categories[], int *countCategory);
+
+void editCategory(Category categories[], int countCategory);
+
+void editProduct(Product products[], int *countProduct);
+
+void deleteCategory(Category categories[], int *countCategory, Product products[], int *countProduct);
+
+void deleteProduct(Product products[], int *countProduct);
+
+void searchCategory(const Category categories[], int countCategory);
+
+void searchProduct(const Product products[], int countProduct);
+
+void sortCategoriesUp(Category categories[], int countCategory);
+
+void sortCategoriesDown(Category categories[], int countCategory);
+
+void sortProductsUp(Product products[], int countProduct);
+
+void sortProductsDown(Product products[], int countProduct);
+
+void menuCategory(Category categories[], int *count, Product products[], int *countProduct);
+
+void menuProduct(Product products[], int *countProduct, Category categories[] , int *countCategory);
+
 void sortCategoriesMenu(Category categories[], int count);
 
-// Ham lua chon cac chuc nang danh muc
-void mainMenu(Category categories[], int *count);
-
-// Ham dang nhap
-void LoginAdmin(Admin admin[], int countAmin);
+void sortProductsMenu(Product products[], int countProduct);
 
 #endif
